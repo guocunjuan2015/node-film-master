@@ -1,0 +1,22 @@
+{
+  "name": "rqb",
+  "version": "1.0.0",
+  "description": "微信改版",
+  "main": "index.js",
+  "scripts": {
+    "test": "微信"
+  },
+  "repository": {
+    "type": "git",
+    "url": "微信改版"
+  },
+  "keywords": [
+    "瑞钱宝微信"
+  ],
+  "author": "guocunjuan",
+  "license": "ISC",
+  "dependencies": {
+    "xtemplate": "^4.6.1",
+    "xtpl": "^3.3.0"
+  }
+}

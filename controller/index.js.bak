@@ -1,0 +1,62 @@
+/**
+ * Created by Administrator on 2017/2/16.
+ */
+
+const publish = require("./../module/article.js");
+
+const moment = require('moment');
+//语言设置
+moment.locale("zh-cn");
+//把数据格式化   就是数据库里面的数据都格式化
+const md = require('markdown-it')();
+//显示首页
+module.exports.getIndex = function(request,response,next){
+  //查询数据
+  publish.show(function(error,data){
+    if (error) {
+      next(error.message);
+    }
+
+   // console.log("没有数据的情况下");
+
+
+
+    /*if(data.length === 0){
+       return response.json({
+       code:"0"
+       ,info:"没有数据"
+       });
+       }
+       */
+/*
+    //查询数据失败情况下
+    if(!data[0]){
+      return response.json({
+        code:"0"
+        ,info:"查询数据失败"
+      });
+    }*/
+
+
+
+      console.log(request.session.user);
+
+    //获得数据
+    let datas = data;
+
+
+
+
+    for(let i = 0; i < datas.length; i++) {
+        datas[i].content = md.render(datas[i].content);//把里面的数据格式化一下
+        datas[i].time = moment(datas[i].time).startOf("second").fromNow();  //绝对时间
+    }
+
+    //把数据格式化
+    return response.render("./index",{
+      user:request.session.user,
+      data:datas
+    });
+  });
+
+};

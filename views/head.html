@@ -1,0 +1,60 @@
+<header id="header" class="clearfloat">
+    <p class="col-lg-10 col-ms-10 col-sm-10 col-xs-10" style="padding-right:0;">
+        <a href="/"><img style="max-width:none;width:20rem;" src="/www/img/globalLogo.png" data-original="/www/img/globalLogo.png"/></a>
+    </p>
+     <button type="button" id="myToggle" class="col-lg-2 col-ms-2 col-sm-2 col-xs-2" style="padding-right:14px;">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+     </button>
+    <div class="nav_toggle"  style="display:none;">
+               <span class="caret"></span>
+               <div class="showDropdown">
+                   <ul>
+                       <li onclick="jumpPage(12)">首页</li>
+                       <li onclick="jumpPage(2)">我要投资</li>
+                       <li onclick="jumpPage(11)">我的账户</li>
+                    {{#if(!user)}}
+                           <li onclick="jumpPage(0)">登录</li>
+                           <li onclick="jumpPage(1)">注册</li>
+                     {{else}}
+                        <div class="logout">
+                           <li onclick="jumpPage(3)" style="color:#ff5555;">安全退出</li>
+                       </div>
+                    {{/if}}
+                   </ul>
+                  </div>
+               <div class="clear"></div>
+           </div>
+ </header>
+<script>
+$(function(){
+  /*点击导航展开效果*/
+  $("#myToggle").click(function(){
+    $(".nav_toggle").toggle();
+  });
+
+})
+
+ /*跳转页面*/
+    function jumpPage(index) {
+     switch (index) {
+     case 0:
+       window.location.href = '/login';/*登录*/
+       break;
+     case 1:
+       window.location.href = '/register';/*注册*/
+       break;
+     case 2:
+       window.location.href = '/project';/*我的投资*/
+       break;
+     case 3:
+       window.location.href = '/out';/*退出*/
+       break;
+
+     }
+
+   }
+</script>
+
+

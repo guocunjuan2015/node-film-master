@@ -1,0 +1,95 @@
+* {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: border-box;
+}
+#box {
+  width: 100%;
+  height: 600px;
+  background-color: #F4F4F4;
+  padding-top: 50px;
+  padding-bottom: 30px;
+}
+#box form {
+  margin: 100px auto;
+  width: 60%;
+  height: 500px;
+  background-color: #FFFFFF;
+}
+#box form ul {
+  padding-left: 250px;
+  width: 250px;
+}
+#box form ul li {
+  list-style: none;
+  font-weight: 600;
+}
+#box form ul li input {
+  background-color: #ffffff;
+  width: 250px;
+  height: 30px;
+  font-weight: 300;
+  font-size: 16px;
+  border-radius: 5px;
+  outline-style: none;
+  border: 1px solid #E6E6E6;
+  color: #000000;
+}
+#box form ul li:nth-of-type(1) {
+  padding-left: 50px;
+  padding-bottom: 10px;
+
+}
+#box form ul li:nth-of-type(1) img {
+  width: 100px;
+  height: 100px;
+}
+#box form ul li:nth-of-type(1) p {
+  font-size: 20px;
+  color: #666666;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+#box form ul li:nth-of-type(2),
+#box form ul li:nth-of-type(3),
+#box form ul li:nth-of-type(4),
+#box form ul li:nth-of-type(5) {
+  padding-bottom: 30px;
+}
+#box form ul li:nth-of-type(5) {
+  padding-bottom: 10px;
+
+}
+#box form ul li:nth-of-type(5) img{
+  width: 120px;
+  height:30px;
+}
+#box form ul li:nth-of-type(5) input {
+  width: 120px;
+}
+#box form ul li:nth-child(6) {
+  padding-bottom: 30px;
+  font-size: 12px;
+  font-weight: 100;
+}
+#box form ul li:nth-child(6) input {
+  width: 12px;
+  height: 12px;
+}
+#box form ul li:nth-child(6) a {
+  text-decoration: none;
+  color: #1D459D;
+}
+#box form ul li:nth-child(6) .left {
+  float: left;
+}
+#box form ul li:nth-child(6) .right {
+  padding-top: 3px;
+  float: right;
+}
+#box form ul li:nth-child(7) {
+  width: 35px;
+}
+#box form ul li:nth-child(7) input {
+  border: 0;
+  background-color: #66afe9;
+}

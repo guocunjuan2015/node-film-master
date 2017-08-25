@@ -1,0 +1,177 @@
+{{extend ("./layout")}}
+        {{#block ("head")}}
+<link href="/www/css/dianying.css" rel="stylesheet"/>
+<script src="/bower/underscore/underscore-min.js"> </script>
+<script src="/www/js/jquery-pagination/jquery.twbsPagination.js"></script>
+        {{/block}}
+
+
+        {{#block ("body")}}
+<div class="way">即将上映</div>
+        <!--电影-->
+<div id="content1"></div>
+
+        <!--分页-->
+
+<script type="text/template" id="template">
+<% datas.forEach(function(data){%>
+<div class="media">
+    <div class="media-left">
+        <a href="#">
+            <img class="media-object" src=<%= data.images.medium %> alt="海报">
+        </a>
+    </div>
+    <div class="media-body">
+        <!--评分-->
+        <div class="rating">评分 : <%=data.rating.average %></div>
+        <!--标题-->
+        <h3 class="media-heading andtitle"><%= data.title%></h3>
+
+
+        <!--演员-->
+        <span class="casts">演员 : </span><% for(var i = 0 ; i < data.casts.length; i++) {%>
+        <span><%=data.casts[i].name%></span>
+        <% if(i != data.casts.length-1){%>
+        <span>  ,</span>
+        <%}%>
+        <%}%>
+        <br/>
+        <!--导演-->
+        <span class="casts">导演 : </span><% for(var i = 0 ; i < data.directors.length; i++) {%>
+        <span><%=data.directors[i].name%></span>
+        <% if(i != data.directors.length-1){%>
+        <span>  ,</span>
+        <%}%>
+        <%}%>
+        <br/>
+        <!--影片类型-->
+        <span class="casts">影片类型 : </span><% for(var i = 0 ; i < data.genres.length; i++) {%>
+        <span><%=data.genres[i]%></span>
+        <% if(i != data.directors.length-1){%>
+        <span>  ,</span>
+        <%}%>
+        <%}%>
+        <br/>
+        <span class="casts">上映年份 : </span><%= data.year%>
+
+    </div>
+</div>
+<% }) %>
+</script>
+
+
+<div class="mod-footer">
+<div class="page-control">
+    <ul id="pagination-demo" class="pagination pull-right page-capacity">
+        <li class="active"><a href="javascript:;">1</a></li>
+        <li>
+            <a href="http://wenda.golaravel.com/sort_type-new__day-0__is_recommend-0__page-2">2</a>
+        </li>
+        <li>
+            <a href="http://wenda.golaravel.com/sort_type-new__day-0__is_recommend-0__page-3">3</a>
+        </li>
+        <li>
+            <a href="http://wenda.golaravel.com/sort_type-new__day-0__is_recommend-0__page-4">4</a>
+        </li>
+        <li>
+            <a href="http://wenda.golaravel.com/sort_type-new__day-0__is_recommend-0__page-2">
+                &gt;</a></li>
+        <li>
+            <a href="http://wenda.golaravel.com/sort_type-new__day-0__is_recommend-0__page-42">
+                &gt;&gt;</a></li>
+    </ul>
+</div>
+</div>
+<div class="full-screen">
+<img src="../www/img/2.gif">
+</div>
+
+        {{/block}}
+
+
+
+
+
+        {{#block ("footerJS")}}
+
+<script>
+$(function(){
+    console.log("aaaaa");
+
+    setTimeout(function(e){
+        $(".full-screen").hide();
+    },1500);
+    var count = 5;//出几条数据
+    var total = 0;
+    var totalPages = 0;
+
+
+
+    $.ajax({
+        url:"https://api.douban.com/v2/movie/coming_soon?start="+ 0 +"&count="+count,
+        dataType:'jsonp',
+        type:"get",
+        success:function(data){
+            console.log(data);
+            totalPages =   Math.ceil(parseInt(data.total)/count );
+
+            console.log(totalPages);//上顶
+
+
+
+
+            //分页
+            $('#pagination-demo').twbsPagination({
+                totalPages: totalPages,
+                visiblePages: 5,
+                first: '<<',
+                prev: '<',
+                next: '>',
+                last: '>>',
+                onPageClick: function (event, page) {
+                    var temp = page - 1;
+                    $.ajax({
+                        url:"https://api.douban.com/v2/movie/coming_soon?start="+ count*temp +"&count="+count,
+                        type:"get",
+                        dataType:"jsonp"
+                        ,success:function(data){
+
+                            $("body").scrollTop(0);
+
+
+
+                            //获得数据
+                            var datas = data.subjects;
+                            //获得模板
+                            var html = $("#template").html();
+                            //实例化模板
+                            var template = _.template(html);
+                            //注入数据
+                            var content = template({datas:datas});
+
+
+
+
+                            $("#content1").html(content);
+                        },error:function(err){
+                            console.log(err);
+                        }
+                    });
+                }
+            });
+
+
+        },
+        error:function(error){
+            console.log(执行错误);
+        }
+
+    });
+
+
+
+
+});
+</script>
+
+        {{/block}}

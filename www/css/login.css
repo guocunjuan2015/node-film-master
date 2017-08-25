@@ -1,0 +1,136 @@
+.rulehead h1 {
+    position:relative;
+    background:#F64840;
+    padding: 2.5%;
+    text-align: center;
+    font-size: 1.8rem !important;
+    color: #fff;
+    vertical-align: middle;
+}
+.rulehead h1 span{
+    position:absolute;
+    display: inline-block;
+    right:3%;
+    top:40%;
+    font-size:1.2rem;
+}
+
+.login-user{ margin-top:12px;}
+.login{
+    background-color:#fff;
+    width:100%;
+    font-size:1.6rem;
+    padding:4% 3%;
+    margin-bottom:1px;
+}
+
+
+#clubRegister .login{
+    background-color:inherit;
+    width:100%;
+    font-size:1.6rem;
+    height:5rem;
+   /*  padding:3% 3%; */
+    margin-bottom:1px;
+}
+.login span{color:#333;}
+.login input[type="text"],.login input[type="password"],.login-user input[type="text"]
+{
+    font-size:1.6rem;
+    margin-left:13%;
+    border:0;
+    color:#999;
+    width:52%;
+    /* text-align:center; */
+}
+
+#clubRegister  .login input[type="text"],#clubRegister .login input[type="password"],#clubRegister .login-user input[type="text"]
+{
+   font-size:1.6rem;
+    margin:0 1% 0 1%;
+    border:0;
+  /* height:45px;line-height:45px; */
+    color:#999;
+    width:98%;
+}
+.pwd{
+  background:none;
+  border:none;
+    color:#7ecdfe;
+    font-size:1.4rem;
+    text-decoration: underline;
+    display:block;
+    width:85%;
+    text-align: center;
+    margin:18px auto 0;
+}
+.btn-pin:link,.btn-pin:active,.btn-pin:hover,.btn-pin:visited{
+    color:#f64840 !important;
+}
+.input-pin{ width:40% !important;}
+.btn-no-pin{
+    display:block;
+    color:#7ecdfe;
+    font-size:1.4rem;
+    text-align:right;
+    width:96%;
+    margin-top:2%;
+    background: none;
+    border: none;
+}
+.agreement{
+    text-align:center;
+    margin:14% auto 0;
+    font-size:1.4rem;
+}
+.mt{
+  margin-top: 2rem;
+}
+.agreement span{color:#666;}
+.agreement a{color:#7ecdfe}
+
+.no-register-info{font-size:1.6rem;color:#666;text-align:center;margin-top:2%;}
+.register-success-info{text-align:center;color:#f64840;font-size:2.6rem;}
+.btns-info{text-align:center;margin-top:2%;font-size:1.6rem;}
+
+.button{
+    text-align:center;
+    height:45px;
+    line-height:45px;
+    width:85%;
+    border-radius:6px;
+    font-size:1.8rem;
+    color:#fff;
+}
+.btn-login{margin:40px auto 0; display:block;}
+.btn-red{background-color:#F64840;margin:10px auto 0; height: 40px;font-size: 1.6rem;}
+.btn-grey{background-color: #DEDEDE;color:#333;}
+.btn-next{margin:10px auto 0; display:block;}
+.btn-open,.btn-no-open{margin:12px auto 0; display:block;}
+
+.btn-next:link,.btn-next:active,.btn-next:hover,.btn-next:visited,.btn-login:link,.btn-login:active,.btn-login:hover,.btn-login:visited,
+.btn-open:link,.btn-open:active,.btn-open:hover,.btn-open:visited
+{
+    color:#fff
+}
+.btn-no-open:link,.btn-no-open:active,.btn-no-open:hover,.btn-no-open:visited{color:#333;}
+.btn-middle{display:inline-block;width:30%;}
+@media screen  and (max-width: 320px) {
+   .login, .login input[type="text"],.login-user input[type="text"]
+    {
+       font-size:1.4rem;
+    }
+    .no-register-info,.btns-info{font-size:1.4rem;}
+    .register-success-info{font-size:2.4rem;}
+    .mt{
+    margin-top: 0.7rem;
+    }
+}
+.input-clear{
+   float: right;
+   width:7%;
+   display:none;
+}
+
+#christmas1 .close1{ position:absolute; right:7%; top:20%;z-index:999;  background:url(../images/closeIndex.png) no-repeat;width:42px; height:42px;opacity:1;border:none;}
+.christmas{position:absolute;left:2%;top:3%;}

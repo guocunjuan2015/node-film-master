@@ -1,0 +1,143 @@
+    {{extend ("./layout")}}
+    {{#block ("head")}}
+	  <link href="/www/css/home.css" rel="stylesheet" >
+    {{/block}}
+    {{#block ("body")}}
+        <!-- Swiper -->
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img class="err-product" data-img="1" src="https://m-static.ppmoney.com/Public/Img/199dfe0f-3e3d-4b2d-9f6d-f64f2d8a1c39.jpg"></div>
+                    <div class="swiper-slide"><img class="err-product" data-img="1" src="https://m-static.ppmoney.com/Public/Img/73deb190-b167-46e9-b7e6-6fc9c687a2ce.jpg"></div>
+                    <div class="swiper-slide"><img class="err-product" data-img="1" src="https://m-static.ppmoney.com/Public/Img/8b2470bd-fe39-4319-820b-bee4d9d7c2e9.jpg"></div>
+                    <div class="swiper-slide"><img class="err-product" data-img="1" src="https://m-static.ppmoney.com/Public/Img/88a662d8-9bf1-4a1e-b9d9-37a8310009dd.jpg"></div>
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+
+            </div>
+            <!-- Swiper JS -->
+
+
+    <div ng-controller="announceController">
+        <section class="totalAmount">
+            <p class="col-lg-6 col-ms-6 col-sm-6 col-xs-6">累计成交(元)
+                <font>2000</font>
+            </p>
+            <p class="col-lg-6 col-ms-6 col-sm-6 col-xs-6" style="float:right;text-align:right;">安全运营(天)
+                <font>6000}</font>
+            </p><div class="clear"></div>
+        </section>
+
+        <section class="circle_nav_list">
+            <ul>
+                <li class="col-lg-3 col-ms-3 col-sm-3 col-xs-3 new_hands" onclick="jumpPage(7)">
+                    <font><img  src="images/new_Guide1.png"/></font><span>新手指引</span>
+                </li>
+                <li class="col-lg-3 col-ms-3 col-sm-3 col-xs-3 enterprises" onclick="jumpPage(8)">
+                    <font><img  src="images/new_Guide2.png"/></font><span>国企背景</span>
+                </li>
+                <li class="col-lg-3 col-ms-3 col-sm-3 col-xs-3 security" onclick="jumpPage(9)">
+                    <font><img  src="images/new_Guide3.png"/></font><span>安全保障</span>
+                </li>
+                <li  class="col-lg-3 col-ms-3 col-sm-3 col-xs-3 recommended" onclick="jumpPage(10)">
+                    <font><img  src="images/new_Guide4.png"/></font>
+                    <span>推荐有礼</span>
+                </li>
+            </ul>
+            <div class="clear"></div>
+        </section>
+
+        <section class="announceBox">
+            <font  class="fa fa-volume-up"></font>
+            <ul id="miniNewsRegion">
+                <li ng-repeat="announce in announces">
+                    <a href="">
+
+
+                    </a>
+                </li>
+            </ul>
+            <a href="" class="btn btn-danger">运营报告</a>
+            <div class="clear"></div>
+        </section>
+    </div>
+
+    <!--理财项目start -->
+    <section class="financialManage" onclick="jumpPage(2)">
+        <div class="financialTitle">
+            <span><img style="margin-top:1rem;"  src="images/projectIcon1.png"/></span>
+            <font>理财项目</font>
+            <p>优质资产＋理财精选</p>
+            <div class="clear"></div>
+        </div>
+        <div class="financialList" >
+            <span></span>
+            <font>11</font>
+            <p>预期年化收益(%)</p>
+            <div class="clear"></div>
+        </div>
+    </section>
+    <!--理财项目end -->
+    <div class="aboutUsTitle">
+        <span onclick="jumpPage(4)">查看更多</span>
+        关于瑞钱宝
+    </div>
+
+    <section class="aboutUs" onclick="jumpPage(4)">
+        <img  src="images/noticeImage.jpg"/>
+        <p>北京瑞钱宝资产管理有限公司（简称“瑞钱宝”）是国企华融天泽旗下的综合金融服务平台，是国企华融天泽...
+        </p>
+        <div class="clear"></div>
+    </section>
+
+    <div id="active" style="display:none;">
+        <span>文章展示区</span>
+        {{{# each(data)}}}
+        <div class="active-acti">
+            <div class="title"> <span>{{{this.title}}}</span></div>
+
+            <i></i>
+            <div class="active-inof">
+                <span>文章发表者 : </span><a>{{{this.uId}}}</a>
+                <span class="item">发表时间 : </span><span>{{{this.time}}}</span>
+            </div>
+
+            <div class="content">
+                {{{this.content}}}
+            </div>
+        </div>
+        {{{/each}}}
+    </div>
+ {{/block}}
+ {{#block ("footerJS")}}
+<script type="text/javascript">
+    jQuery(document).ready(function ($){
+        /*导航栏*/
+        $("#nav ul li").mousemove(function(event){
+           $(this).addClass("current");
+        });
+        $("#nav ul li").mouseout(function(event){
+            $(this).removeClass("current");
+        });
+})
+
+
+ var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        continuous: true,
+        direction: 'horizontal',
+        loop : false, /*图片是否循环 */
+        // 如果需要前进后退按钮
+        nextButton: '.swiper-button-next',
+        keyboardControl : true,
+        mousewheelControl : true,
+        direction:'horizontal',
+        mousewheelForceToAxis : true,
+        autoplay:3500,
+        speed:800,
+        observer:true,//修改swiper自己或子元素时，自动初始化swiper
+        observeParents:true//修改swiper的父元素时，自动初始化swiper
+    });
+</script>
+{{/block}}

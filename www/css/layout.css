@@ -1,0 +1,212 @@
+body html{
+    width: 100%;
+    background-color: #F9F9F9;
+}
+#head {
+    position:relative;height:6rem;background:#fff;border-bottom:2px solid #F5F4F4;
+}
+#head  p{padding-left:40px;padding-top:1.5rem;text-align:center;}
+#head button{margin-top:1.8rem;width:14%;border:1px solid  transparent;background-color:transparent;}
+#head button:hover,.index-header button:active{border:1px solid  transparent;background-color:transparent;}
+#head .icon-bar{margin-top:4px;width:16px;height:2px;background:#4A4A4A;display:block;border-radius:1px;}
+.nav_toggle{position:absolute;top:5rem;width:14rem;right:0;z-index:9999;}
+.nav_toggle .showDropdown{
+    position:absolute;top:0.4rem;
+    width:16rem;
+    -webkit-box-shadow: #666 0px 0px 6px;
+    -moz-box-shadow: #666 0px 0px 6px;
+    box-shadow: #666 0px 0px 6px;
+    background:rgba(255, 255,255, 1);
+
+}
+.nav_toggle .caret{
+    position:absolute;
+    top:-1.2rem;
+    right:2rem;
+    border-bottom:1.6rem dashed #F5F4F4;border-top:none;
+    border-right:1.6rem solid transparent;
+    border-left:1.6rem solid transparent;
+}
+.index-header1  li{line-height:5rem;color:#4A4A4A;text-align:center;font-size:1.2rem;border-top:1px solid #F5F4F4;}
+.index-header1  li:last-child{margin-right:0;}
+#head #submit{
+    width: 0;
+    height: 0;
+}
+#head .left input {
+    width: 80px;
+    height: 30px;
+    font-size: 16px;
+    float: left;
+
+    font-family: "微软雅黑";
+    color: #000011;
+    border-radius: 10px;
+    padding-left: 28px;
+    padding-right: 18px;
+    margin-left: 10px;
+    z-index: 1;
+    transition: width .5s linear;
+    position: absolute;
+    top: 10px;
+    left: 260px;
+}
+#head .left #search-img {
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: url("../img/search.png") no-repeat -244px 0;
+    float: left;
+    z-index: 2;
+    position: absolute;
+    top: 9px;
+    right: 50px;
+  /*  position: absolute;
+
+    left: 261px;
+    z-index: 2;*/
+}
+#head .left img{
+    margin-right: 10px;
+}
+#head .left span {
+    display: block;
+    font-weight: 500;
+    font-size: 16px;
+    font-family: "微软雅黑";
+    position: relative;
+    top: 15px;
+    right: -76px;
+    float: left;
+}
+#head .right {
+    float: right;
+    padding-right: 15%;
+    padding-top: 10px;
+}
+#head .right button:nth-child(1) {
+    margin-right: 10px;
+}
+#head .next{
+    float: right;
+    position: relative;
+    padding-right: 15%;
+}
+#head .next button:nth-of-type(1) {
+    margin-right: 10px;
+}
+#head .next img{
+    width: 60px;
+    height: 50px;
+
+}
+#head .next  .publish{
+    margin-top: 10px;
+}
+#head .next .setall{
+    width: 60px;
+    height: 50px;
+    float: right;
+}
+#head .set{
+    position: absolute;
+    border: 1px solid red;
+    top: 50px;
+    left: 65px;
+    width: 60px;
+    height: 20px;
+    background-color: #23527c;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    color: #ffffff;
+    display: none;
+    z-index: 10;
+}
+#head .position{
+    position: relative;
+    width: 350px;
+    top: 0;
+    left: 0;
+}
+#head .out{
+    border: 1px solid red;
+    position: absolute;
+    top: 70px;
+    left: 65px;
+    width: 60px;
+    height: 20px;
+    background-color: #23527c;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    color: #ffffff;
+    display: none;
+    z-index: 10;
+}
+
+
+/*动画 收索栏宽度*/
+.current .left #search {
+    transition: width .5s linear;
+    width: 350px;
+}
+
+
+
+/*页脚部分*/
+#footer {
+    margin-top: 70px;
+    padding-left: 14%;
+    padding-right: 14%;
+}
+#footer .copyright {
+    font-size: 14px;
+    padding-bottom: 20px;
+}
+#footer .copyright pre{
+
+    width: 100%;
+}
+#footer .copyright span:nth-of-type(1) {
+    padding-left: 4em;
+}
+#footer .copyright span:nth-of-type(2) {
+    padding-left: 5em;
+}
+#footer .copyright span:nth-of-type(3) {
+    padding-left: 20em;
+}
+#footer .message {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 32px;
+}
+#footer .message a {
+    position: absolute;
+    display: block;
+    width: 103px;
+    height: 100%;
+}
+#footer .message a img {
+    width: 100%;
+    height: 100%;
+}
+#footer .message a:nth-child(1) {
+    left: 50%;
+    margin-left: -154px;
+}
+#footer .message a:nth-child(2) {
+    left: 50%;
+    margin-left: -308px;
+}
+#footer .message a:nth-child(3) {
+    left: 50%;
+    margin-left: 0;
+}
+#footer .message a:nth-child(4) {
+    left: 50%;
+    margin-left: 154px;
+}

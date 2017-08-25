@@ -1,0 +1,23 @@
+<header id="head" class="clearfloat">
+    <div class="left clearfloat position">
+        <a href="/"><img src="/www/img/2.gif" data-original="/www/img/logo.png"/></a>
+            <form id="submit-ti">
+       <!-- <label class="search-key"></label>-->
+            <input type="text" placeholder="搜索" id="search"/><div id="search-img"></div>
+                <input type="submit" id="submit"/>
+            </form>
+    </div>
+    {{#if(user)}}
+    <div class="next hidden-xs">
+        <a href="/publish"><button type="button" class="btn btn-warning publish">发布</button></a>
+
+        <div class="setall"><img src={{user.img}} /> <a href="/userSet"><div class="set">设置</div></a> <a href="/out"><div class="out">退出</div></a></div>
+    </div>
+    {{else}}
+    <div class="right hidden-xs">
+
+        <a href="/register"><button type="button" class="btn btn-primary">注册</button></a>
+        <a href="/login"><button type="button" class="btn btn-success">登入</button></a>
+    </div>
+    {{/if}}
+</div>

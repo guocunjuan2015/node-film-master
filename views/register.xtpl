@@ -1,0 +1,105 @@
+
+{{extend ("./layout")}}
+        {{#block ("head")}}
+    <link href="/www/css/register.css" rel="stylesheet" type="text/css">
+        {{/block}}
+
+
+{{#block ("body")}}
+<div id="box">
+    <form method="post" action="/register"><!---->
+        <ul>
+            <li>
+                <img src="/www/img/logo.png"/>
+                <p>注册新用户名</p>
+            </li>
+            <li>
+                <input type="password" name="password" placeholder="密码" id="password"/>
+            </li>
+            <li>
+                <input type="text" placeholder="注册名"  name="username" id="nameuser" />
+            </li>
+
+            <li>
+                <input type="email" placeholder="邮件" name="email" id="email"/>
+            </li>
+
+            <li>
+                <input type="Textarea" placeholder="验证码" name="code" id="code"/>
+                <img src="/code"/>
+            </li>
+
+            <li>
+                <div class="left">
+                    <label><input name="select" type="radio"  id="radio" />我同意</label>
+                    <a href="#">用户协议</a>
+                </div>
+                <div class="right">
+                    <a href="#">已有用户名?</a>
+                </div>
+            </li>
+            <li>
+                <input type="submit" value="注册"/>
+            </li>
+        </ul>
+    </form>
+</div>
+
+{{/block}}
+
+
+
+        {{#block ("footerJS")}}
+<script type="text/javascript">
+
+    jQuery(document).ready(function ($){
+
+
+        $("form").submit(function(e) {
+            e.preventDefault();//禁止默认事件
+            var password = $("#password").val();
+            var nameuser = $("#nameuser").val();
+            var email = $("#email").val();
+            var code = $("#code").val();
+            if (password == "") {
+             alert("密码为空");
+                return;
+            }
+            else if(nameuser == ""){
+
+               alert("用户名为空");
+                return;
+            }
+            else if(code == ""){
+             alert("已验证为空");
+                return;
+            }
+
+
+            if (!$("#radio").is(":checked")) {
+               alert("请同意用户协议");
+                return;
+            }
+            var form = $("form");
+
+            $.ajax({
+                url:form.attr("action"),
+                type:form.attr("method"),
+                dataType:"json",
+                data:form.serialize(),
+                success:function(data){
+                    if(data.code == "001"){
+                        console.log("成功");
+                    }
+                    console.log(data.code);
+                    window.location.href = "/";
+                },
+                error:function(){
+                    console.log("失败");
+                }
+            })
+        });
+
+    });
+</script>
+{{/block}}
